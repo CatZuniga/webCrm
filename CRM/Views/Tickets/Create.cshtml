@@ -1,0 +1,71 @@
+@model CRM.Models.Ticket
+
+@{
+    ViewData["Title"] = "Create";
+}
+<br>
+<br>
+
+<h2>Crear nuevo ticket</h2>
+
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Titulo" class="control-label"></label>
+                <input asp-for="Titulo" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Detalle" class="control-label"></label>
+                <input asp-for="Detalle" class="form-control" />
+                <span asp-validation-for="Detalle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quien_reporto" class="control-label"></label>
+                <input asp-for="Quien_reporto" class="form-control" />
+                <span asp-validation-for="Quien_reporto" class="text-danger"></span>
+            </div>
+           
+    
+             <div class="form-group">
+                <label asp-for="Estado_Actual" class="control-label"></label>
+              
+                @Html.DropDownListFor(model => model.Estado_Actual,
+                  new List<SelectListItem> {
+                       new SelectListItem { Value = "Abierto" , Text = "Abierto" },
+                       new SelectListItem { Value = "Proceso" , Text = "Proceso" },
+                       new SelectListItem { Value = "En Espera" , Text = "En Espera" },
+              new SelectListItem { Value = "Finalizado" , Text = "Finalizado" }
+
+                    },
+                  new { @class = "form-control" })
+
+
+                @Html.ValidationMessageFor(model => model.Estado_Actual, "", new { @class = "text-danger" })
+
+
+                <span asp-validation-for="Estado_Actual" class="text-danger"></span>
+            </div>
+           
+
+     
+            <div class="form-group">
+              <input type="submit" value="Create" class="btn btn-info" />
+                   <a class="btn btn-secondary " asp-action="Index">Volver a lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

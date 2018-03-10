@@ -1,0 +1,59 @@
+@model IEnumerable<CRM.Models.Reunion>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+</br>
+</br>
+
+<h2  class="text-center">Lista de reuniones</h2>
+
+<p>
+    <a class="btn btn-info" asp-action="Create">Crear Nuevo</a>
+</p>
+<table class="table alert alert-primary">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Titulo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DiaHora)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Virtual)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IDCliente)
+                </th>
+               
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaHora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Virtual)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDCliente)
+            </td>
+          
+            <td>
+            <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.ID"> Editar</a> |
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.ID">Detalles</a> |
+                <a  class="btn btn-dark" asp-action="Delete" asp-route-id="@item.ID">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

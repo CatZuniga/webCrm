@@ -1,0 +1,55 @@
+@model CRM.Models.Reunion
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<br>
+<br>
+
+<h2>Editar  reunion</h2>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group">
+                <label asp-for="Titulo" class="control-label"></label>
+                <input asp-for="Titulo" class="form-control" />
+                <span asp-validation-for="Titulo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DiaHora" class="control-label"></label>
+                <input asp-for="DiaHora" class="form-control" />
+                <span asp-validation-for="DiaHora" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="Virtual" /> @Html.DisplayNameFor(model => model.Virtual)
+                    </label>
+                </div>
+            </div>
+             <div class="form-group">
+                <label asp-for="IDCliente" class="control-label"></label>
+                <select asp-for="IDCliente" class ="form-control" asp-items="ViewBag.IDCliente"></select>
+            </div>
+
+           
+            
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+       <a class="btn btn-secondary " asp-action="Index">Volver a lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

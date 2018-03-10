@@ -1,0 +1,56 @@
+﻿@model CRM.Models.Usuario
+
+@{
+    ViewBag.Title = "Login";
+}
+
+@using (Html.BeginForm("Login", "Home", FormMethod.Post))
+{
+    <fieldset>
+        <legend></legend>
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @if (@ViewBag.Message != null)
+        {
+            <div style="border: 1px solid red">
+                @ViewBag.Message
+            </div>
+        }
+
+
+        <div class="jumbotron container-fluid alert alert-secondary">
+         <div class="row justify-content-md-center">
+    <div class="col-md-auto">
+  <h1 class="display-4">Iniciar Sesión</h1>
+  <table  >
+            <tr>
+                <td>@Html.LabelFor(model => model.Username)</td>
+                <td>@Html.TextBoxFor(model => model.Username)</td>
+                <td>@Html.ValidationMessageFor(model => model.Username)</td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.Password)
+                </td>
+                <td>
+                    @Html.PasswordFor(model => model.Password)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.Password)
+                </td>
+            </tr>
+          
+               
+               
+        </table>
+  <p></p>
+  <p class="lead">
+         <input class="btn btn-primary btn-lg col col-lg-12 " type="submit" value="Login" />
+  </p>
+
+
+</div>
+        </div></div>
+    </fieldset>
+}

@@ -1,0 +1,49 @@
+@model IEnumerable<CRM.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<br>
+
+<br>
+<h2 class="text-center">Lista de usuarios</h2>
+
+<p>
+    <a class="btn btn-info" asp-action="Create">Crear nuevo</a>
+</p>
+<table class="table alert alert-primary">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Username)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Password)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Tipo)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td>
+            <td>
+                   <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.ID"> Editar</a> |
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.ID">Detalles</a> |
+                <a  class="btn btn-dark" asp-action="Delete" asp-route-id="@item.ID">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

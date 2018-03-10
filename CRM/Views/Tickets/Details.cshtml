@@ -1,0 +1,54 @@
+@model CRM.Models.Ticket
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Detalle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Detalle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Quien_reporto)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Quien_reporto)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado_Actual)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Estado_Actual)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IDCliente)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IDCliente)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.IDUsuario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IDUsuario)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+        <a class="btn btn-secondary " asp-action="Index">Volver a lista</a>
+</div>

@@ -1,0 +1,10 @@
+C:\Users\Cata\CRM\bin\Debug\netcoreapp2.0\CRM.deps.json
+C:\Users\Cata\CRM\bin\Debug\netcoreapp2.0\CRM.runtimeconfig.json
+C:\Users\Cata\CRM\bin\Debug\netcoreapp2.0\CRM.runtimeconfig.dev.json
+C:\Users\Cata\CRM\bin\Debug\netcoreapp2.0\CRM.dll
+C:\Users\Cata\CRM\bin\Debug\netcoreapp2.0\CRM.pdb
+C:\Users\Cata\CRM\obj\Debug\netcoreapp2.0\CRM.csproj.CoreCompileInputs.cache
+C:\Users\Cata\CRM\obj\Debug\netcoreapp2.0\CRM.AssemblyInfoInputs.cache
+C:\Users\Cata\CRM\obj\Debug\netcoreapp2.0\CRM.AssemblyInfo.cs
+C:\Users\Cata\CRM\obj\Debug\netcoreapp2.0\CRM.dll
+C:\Users\Cata\CRM\obj\Debug\netcoreapp2.0\CRM.pdb

@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Panel de Control";
+}
+
+ <h5 class="mb-1">Bienvenido  @ViewData["Username"] </h5>
+ 
+ <h2 class="text-center">@ViewData["Title"]</h2>
+
+ 
+
+<div class="list-group">
+  <a class="list-group-item list-group-item-action flex-column align-items-start active" >
+    <div class="d-flex w-100 justify-content-between">
+       
+      <p class="mb-1">Seleccione el mantenimiento que  desea realizar</p>
+    </div>
+    <p class="mb-1"></p>
+   </a>
+<a class="list-group-item list-group-item-action flex-column align-items-start" asp-area="" asp-controller="Usuarios" asp-action="Index">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Usuarios</h5>
+    </div>
+   
+      </a>
+
+<a class="list-group-item list-group-item-action flex-column align-items-start" asp-area="" asp-controller="Clientes" asp-action="Index">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Clientes</h5>
+    </div>
+   
+      </a>
+
+<a class="list-group-item list-group-item-action flex-column align-items-start" asp-area="" asp-controller="Contactos" asp-action="Index">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Contactos</h5>
+    </div>
+ 
+      </a>
+    
+      <a cl<a class="list-group-item list-group-item-action flex-column align-items-start" asp-area="" asp-controller="Reuniones" asp-action="Index">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Reuniones</h5>
+    </div>
+   
+      </a>
+<a cl<a class="list-group-item list-group-item-action flex-column align-items-start" asp-area="" asp-controller="Tickets" asp-action="Index">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Tickets</h5>
+    </div>
+  
+      </a>
+
+
+</div>
+
+

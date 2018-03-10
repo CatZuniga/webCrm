@@ -1,0 +1,67 @@
+@model CRM.Models.Usuario
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<br>
+<br>
+
+<h2>Crear nuevo usuario</h2>
+
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+         
+
+          
+ <div class="form-group">
+                <label asp-for="Tipo" class="control-label"></label>
+              
+                @Html.DropDownListFor(model => model.Tipo,
+                  new List<SelectListItem> {
+                       new SelectListItem { Value = "admin" , Text = "Administrador" },
+                       new SelectListItem { Value = "user" , Text = "Usuario" },
+                   
+                    },
+                  new { @class = "form-control" })
+
+
+                @Html.ValidationMessageFor(model => model.Tipo, "", new { @class = "text-danger" })
+
+
+                <span asp-validation-for="Tipo" class="text-danger"></span>
+            </div>
+
+
+
+
+            <div class="form-group">
+               <input type="submit" value="Create" class="btn btn-info" />
+                     <a class="btn btn-secondary " asp-action="Index">Volver a lista</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
